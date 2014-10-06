@@ -4,9 +4,9 @@
 
 ## Features
 - Works on input type="text"
-- Only supports positive integers 0 - Infinity
+- Only supports positive integers (0 - Infinity)
 - Set initial values in the markup or Javascript
-- Optionally configure min/max value with attributes
+- Optionally configure min/max values with attributes
 - Supports keyboard interaction (increase/decrease by 10 by holding shift)
 - Enables number pad on mobile browsers
 
@@ -109,4 +109,4 @@ $('#some-input').on('decrease', function (e, amount) {
 ```
 
 ## Authors
-This plugin is released by Aan Zee
+This plugin is released by Aan Zee and is mainly developed by (Jeroen Ransijn)[https://github.com/jeroenransijn]
