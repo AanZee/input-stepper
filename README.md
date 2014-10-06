@@ -109,4 +109,4 @@ $('#some-input').on('decrease', function (e, amount) {
 ```
 
 ## Authors
-Jeroen Ransijn
+This plugin is released by Aan Zee
