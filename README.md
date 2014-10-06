@@ -108,4 +108,4 @@ $('#some-input').on('decrease', function (e, amount, plugin) {
 ```
 
 ## Authors
-This plugin is released by Aan Zee and is mainly developed by (Jeroen Ransijn)[https://github.com/jeroenransijn]
+This plugin is released by Aan Zee and is mainly developed by [Jeroen Ransijn](https://github.com/jeroenransijn)
