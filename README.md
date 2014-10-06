@@ -1,6 +1,5 @@
 # jquery.input-stepper.js
-> Lightweight input stepper for real world usage
-
+> Lightweight input stepper for real world usage. [Check it out on JSFiddle](http://jsfiddle.net/jeroen_ransijn/38qp5xdh/)
 
 ## Features
 - Works on input type="text"
