@@ -149,7 +149,7 @@
 			var newAmount = parseInt(this.amount + (amount || 1), 10);
 
 			this.setValue(newAmount);
-			this.$input.trigger('increase', [amount]);
+			this.$input.trigger('increase', [amount, this]);
 
 			return this;
 		},
@@ -159,7 +159,7 @@
 			var newAmount = parseInt(this.amount - (amount || 1), 10);
 
 			this.setValue(newAmount);
-			this.$input.trigger('decrease', [amount]);
+			this.$input.trigger('decrease', [amount, this]);
 
 			return this;
 		},

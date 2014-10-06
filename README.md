@@ -99,11 +99,11 @@ If your application listens change events on the input element, it can now also 
 ```
 
 ```javascript
-$('#some-input').on('increase', function (e, amount) {
+$('#some-input').on('increase', function (e, amount, plugin) {
 	alert('increase with: ' + amount);
 });
 
-$('#some-input').on('decrease', function (e, amount) {
+$('#some-input').on('decrease', function (e, amount, plugin) {
 	alert('decrease with: ' + amount);
 });
 ```
