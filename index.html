@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>input stepper examples</title>
+</head>
+<body>
+
+	<h1>jquery.input-stepper.js</h1>
+
+	<h2>Basic usage</h2>
+
+	<div class="input-stepper">
+		<button data-input-stepper-decrease>-</button>
+		<input type="text">
+		<button data-input-stepper-increase>+</button>
+	</div>
+
+	<hr>
+
+	<h2>Basic usage with links</h2>
+	<p>Increase/decrease elements always get a classs when disabled, by default this is <code>is-disabled</code></p>
+
+	<div class="input-stepper">
+		<a href="#" data-input-stepper-decrease>Decrease</a>
+		<input type="text">
+		<a href="#" data-input-stepper-increase>Increase</a>
+	</div>
+
+	<hr>
+
+	<h2>With intial value</h2>
+
+	<div class="input-stepper">
+		<button data-input-stepper-decrease>-</button>
+		<input type="text" value="6">
+		<button data-input-stepper-increase>+</button>
+	</div>
+
+	<hr>
+
+	<h2>With min and max value</h2>
+
+	<div class="input-stepper">
+		<button data-input-stepper-decrease>-</button>
+		<input type="text" min="36" max="52">
+		<button data-input-stepper-increase>+</button>
+	</div>
+
+	<hr>
+
+	<h2>With configured increase/decrease values and max value</h2>
+
+	<div class="input-stepper">
+		<button data-input-stepper-decrease="10">-10</button>
+		<button data-input-stepper-decrease="5">-5</button>
+		<button data-input-stepper-decrease>-1</button>
+		<input type="text" max="100">
+		<button data-input-stepper-increase>+1</button>
+		<button data-input-stepper-increase="5">+5</button>
+		<button data-input-stepper-increase="10">+10</button>
+	</div>
+
+	<hr>
+
+	<h2>Advanced usage with settings</h2>
+
+	<div class="input-stepper-advanced">
+		<button class="decrease" data-decrease="10">-10</button>
+		<button class="decrease" data-decrease="5">-5</button>
+		<button class="decrease" data-decrease>-1</button>
+		<input type="text" value="50" min="25" max="75">
+		<button class="increase" data-increase>+1</button>
+		<button class="increase" data-increase="5">+5</button>
+		<button class="increase" data-increase="10">+10</button>
+	</div>
+
+	<hr>
+
+	<h2>Custom increase/decrease events on the input element</h2>
+
+	<div class="input-stepper">
+		<button data-input-stepper-decrease>-</button>
+		<input id="some-input" type="text">
+		<button data-input-stepper-increase>+</button>
+	</div>
+
+	<hr>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="jquery.input-stepper.js"></script>
+	<script>
+		$('.input-stepper').inputStepper();
+
+		$('.input-stepper-advanced').inputStepper({
+			selectorButtonIncrease: '.increase',
+			selectorButtonDecrease: '.decrease',
+			dataAttributeIncrease: 'increase',
+			dataAttributeDecrease: 'decrease'
+		});
+
+		$('#some-input').on('increase', function (e, amount) {
+			alert('increase with: ' + amount);
+		});
+		$('#some-input').on('decrease', function (e, amount) {
+			alert('decrease with: ' + amount);
+		});
+	</script>
+</body>
+
+</html>
