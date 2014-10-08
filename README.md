@@ -29,9 +29,11 @@ Check out `index.html` for all examples.
 Call the input stepper plugin on the desired selector
 
 ```javascript
-$('.input-stepper').inputStepper();
+$(function () {
+	// Document ready
+	$('.input-stepper').inputStepper();
+});
 ```
-
 
 ## Advanced usage
 

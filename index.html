@@ -90,20 +90,23 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="jquery.input-stepper.js"></script>
 	<script>
-		$('.input-stepper').inputStepper();
+		$(function () {
+			// Document ready
+			$('.input-stepper').inputStepper();
 
-		$('.input-stepper-advanced').inputStepper({
-			selectorButtonIncrease: '.increase',
-			selectorButtonDecrease: '.decrease',
-			dataAttributeIncrease: 'increase',
-			dataAttributeDecrease: 'decrease'
-		});
+			$('.input-stepper-advanced').inputStepper({
+				selectorButtonIncrease: '.increase',
+				selectorButtonDecrease: '.decrease',
+				dataAttributeIncrease: 'increase',
+				dataAttributeDecrease: 'decrease'
+			});
 
-		$('#some-input').on('increase', function (e, amount) {
-			alert('increase with: ' + amount);
-		});
-		$('#some-input').on('decrease', function (e, amount) {
-			alert('decrease with: ' + amount);
+			$('#some-input').on('increase', function (e, amount) {
+				alert('increase with: ' + amount);
+			});
+			$('#some-input').on('decrease', function (e, amount) {
+				alert('decrease with: ' + amount);
+			});
 		});
 	</script>
 </body>
