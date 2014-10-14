@@ -44,7 +44,7 @@
 
 			this.initialValue = this.getValue() || this.options.initialValue || this.min;
 
-			this.setValue(this.initialValue);
+			this.setValue(this.initialValue, true);
 			this.checkState();
 
 			this.$input.attr('pattern', '[0-9]*');
@@ -119,7 +119,7 @@
 			return this.$input.val();
 		},
 
-		setValue: function (amount) {
+		setValue: function (amount, isSilent) {
 			amount = parseInt(amount, 10);
 
 			if (this.amount === parseInt(amount, 10) ) return;
@@ -138,7 +138,13 @@
 				this.amount = parseInt(this.min, 10);
 			}
 
-			this.$input.val(this.amount).trigger('change');
+
+			if ( ! isSilent) {
+				this.$input.val(this.amount).trigger('change');
+			} else {
+				this.$input.val(this.amount);
+			}
+
 			this.checkState();
 
 			return this;
