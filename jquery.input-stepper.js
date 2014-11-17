@@ -89,8 +89,8 @@
 			}
 
 			var isSomeKeys = $.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1;
-			// Allow: Ctrl+A
-			var isCntrlA = (e.keyCode == 65 && e.ctrlKey === true);
+			// Allow: keyboard shortcuts
+			var isMeta = e.metaKey || e.altKey || e.ctrlKey;
 			// Allow: home, end, left, right
 			var isHomeEndLeftRight = (e.keyCode >= 35 && e.keyCode <= 39);
 
@@ -100,7 +100,7 @@
 			if (isUpKey) this.increase( (e.shiftKey ? 10 : 1) );
 			if (isDownKey) this.decrease( (e.shiftKey ? 10 : 1) );
 
-			if (isSomeKeys || isCntrlA || isHomeEndLeftRight) return;
+			if (isSomeKeys || isMeta || isHomeEndLeftRight) return;
 
 			// Ensure that it is a number and stop the keypress
 			if ((e.keyCode < 48 || e.keyCode > 57) && (e.keyCode < 96 || e.keyCode > 105)) {
