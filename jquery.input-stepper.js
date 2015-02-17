@@ -124,6 +124,10 @@
 
 			if (this.amount === parseInt(amount, 10) ) return;
 
+			this._setValue(amount, isSilent);
+		},
+
+		_setValue: function (amount, isSilent) {
 			if (amount !== '') {
 				this.amount = parseInt(amount, 10);
 			} else {
@@ -138,7 +142,6 @@
 				this.amount = parseInt(this.min, 10);
 			}
 
-
 			if ( ! isSilent) {
 				this.$input.val(this.amount).trigger('change');
 			} else {
@@ -148,6 +151,16 @@
 			this.checkState();
 
 			return this;
+		},
+
+		setMin: function (min) {
+			this.min = parseInt(min, 10);
+			this._setValue(this.getValue());
+		},
+
+		setMax: function (max) {
+			this.max = parseInt(max, 10);
+			this._setValue(this.getValue());
 		},
 
 		increase: function (amount) {
