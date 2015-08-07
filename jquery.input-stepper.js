@@ -60,7 +60,7 @@
 			});
 			this.$decreaseButton.on('click', function (e) {
 				e.preventDefault();
-				_this.decrease( $(this).data('input-stepper-decrease') || 1 );
+				_this.decrease( $(this).data( _this.options.dataAttributeDecrease ) || 1 );
 			});
 
 			return this;
