@@ -107,7 +107,7 @@
 				// Numbers 0-9
 				this.setValue(this.getValue());
 			}
-			if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) ) {
+			if ((e.shiftKey || ((e.keyCode < 48 || e.keyCode > 57) && (e.keyCode < 96 || e.keyCode > 105))) ) {
 
 				e.preventDefault();
 			}
