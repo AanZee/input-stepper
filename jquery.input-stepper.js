@@ -80,7 +80,7 @@
 			// Inspired by:
 			// http://stackoverflow.com/questions/995183/how-to-allow-only-numeric-0-9-in-html-inputbox-using-jquery
 
-			// Allow: backspace, delete, tab, escape, enter and .
+			// Allow: backspace, delete, tab, escape and enter
 			var isEnterKey = e.keyCode == 13;
 
 			if (isEnterKey) {
@@ -88,7 +88,7 @@
 				return e.preventDefault();
 			}
 
-			var isSomeKeys = $.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1;
+			var isSomeKeys = $.inArray(e.keyCode, [46, 8, 9, 27, 13, 110]) !== -1;
 			// Allow: keyboard shortcuts
 			var isMeta = e.metaKey || e.altKey || e.ctrlKey;
 			// Allow: home, end, left, right
